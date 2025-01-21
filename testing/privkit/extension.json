@@ -1,0 +1,111 @@
+{
+    "name": "privkit",
+    "package_name": "privkit",
+    "version": "0.0.0",
+    "extension_author": "c2biz",
+    "original_author": "mertdas",
+    "repo_url": "https://github.com/sliverarmory/privkit",
+    "commands": [
+        [
+            {
+                "command_name": "alwaysinstallelevated",
+                "help": "",
+                "depends_on": "coff-loader",
+                "entrypoint": "go",
+                "files": [
+                    {
+                        "os": "windows",
+                        "arch": "amd64",
+                        "path": "alwaysinstallelevated.o"
+                    }
+                ],
+                "arguments": []
+            },
+            {
+                "command_name": "autologon",
+                "help": "",
+                "depends_on": "coff-loader",
+                "entrypoint": "go",
+                "files": [
+                    {
+                        "os": "windows",
+                        "arch": "amd64",
+                        "path": "autologon.o"
+                    }
+                ],
+                "arguments": []
+            },
+            {
+                "command_name": "credentialmanager",
+                "help": "",
+                "depends_on": "coff-loader",
+                "entrypoint": "go",
+                "files": [
+                    {
+                        "os": "windows",
+                        "arch": "amd64",
+                        "path": "credentialmanager.o"
+                    }
+                ],
+                "arguments": []
+            },
+            {
+                "command_name": "hijackablepath",
+                "help": "",
+                "depends_on": "coff-loader",
+                "entrypoint": "go",
+                "files": [
+                    {
+                        "os": "windows",
+                        "arch": "amd64",
+                        "path": "hijackablepath.o"
+                    }
+                ],
+                "arguments": []
+            },
+            {
+                "command_name": "modifiableautorun",
+                "help": "",
+                "depends_on": "coff-loader",
+                "entrypoint": "go",
+                "files": [
+                    {
+                        "os": "windows",
+                        "arch": "amd64",
+                        "path": "modifiableautorun.o"
+                    }
+                ],
+                "arguments": []
+            },
+            {
+                "command_name": "tokenprivileges",
+                "help": "",
+                "depends_on": "coff-loader",
+                "entrypoint": "go",
+                "files": [
+                    {
+                        "os": "windows",
+                        "arch": "amd64",
+                        "path": "tokenprivileges.o"
+                    }
+                ],
+                "arguments": []
+            },
+            {
+                "command_name": "unquotedsvcpath",
+                "help": "",
+                "depends_on": "coff-loader",
+                "entrypoint": "go",
+                "files": [
+                    {
+                        "os": "windows",
+                        "arch": "amd64",
+                        "path": "unquotedsvcpath.o"
+                    }
+                ],
+                "arguments": []
+            }
+        ]
+        
+    ]
+}

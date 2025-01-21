@@ -1,0 +1,43 @@
+{
+    "name": "nanodump_ppl_dump",
+    "help": "Bypass Protected Process Light (PPL) and dump the LSASS process.",
+    "usage": "nanodump_ppl_dump --write <dump_path> [--valid] [--duplicate] [--file <file_path>] [--help]",
+    "arg_type": "flags",
+    "arguments": [
+        {
+            "name": "write",
+            "type": "string",
+            "description": "Path to write the dump file. Must be a valid, fully qualified path.",
+            "required": true,
+            "alias": "-w"
+        },
+        {
+            "name": "valid",
+            "type": "int",
+            "description": "Set to 1 to create a dump with a valid signature. Default: 0 (invalid signature).",
+            "required": false,
+            "alias": "-v"
+        },
+        {
+            "name": "duplicate",
+            "type": "int",
+            "description": "Set to 1 to duplicate an existing LSASS handle. Default: 0 (no duplication).",
+            "required": false,
+            "alias": "-d"
+        },
+        {
+            "name": "file",
+            "type": "file",
+            "description": "Path to a binary file containing additional data (e.g., DLL or shellcode).",
+            "required": false,
+            "alias": "-f"
+        },
+        {
+            "name": "help",
+            "type": "boolean",
+            "description": "Print this help message and exit.",
+            "required": false,
+            "alias": "-h"
+        }
+    ]
+}

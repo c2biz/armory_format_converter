@@ -1,0 +1,67 @@
+{
+    "name": "TrustedSec Situational Awareness BOFs",
+    "package_name": "cs-sa-bofs",
+    "version": "0.0.0",
+    "extension_author": "moloch--",
+    "original_author": "TrustedSec",
+    "repo_url": "https://github.com/sliverarmory/CS-Situational-Awareness-BOF",
+    "commands": [
+        {
+            "command_name": "sa-nslookup",
+            "help": "Makes a dns query. NOTE: Some situations are limited due to observed crashes",
+            "depends_on": "coff-loader",
+            "entrypoint": "go",
+            "files": [
+                {
+                    "os": "windows",
+                    "arch": "amd64",
+                    "path": "nslookup.x64.o"
+                },
+                {
+                    "os": "windows",
+                    "arch": "386",
+                    "path": "nslookup.x86.o"
+                }
+            ],
+            "arguments": [
+                {
+                    "name": "hostname",
+                    "desc": "Hostname to resolve",
+                    "type": "string",
+                    "optional": false
+                },
+                {
+                    "name": "server",
+                    "desc": "DNS Server to use",
+                    "type": "string",
+                    "optional": false
+                },
+                {
+                    "name": "type",
+                    "desc": "DNS record type (A, AAAA, or ANY), see https://docs.microsoft.com/en-us/windows/win32/dns/dns-constants for the actual values",
+                    "type": "short",
+                    "optional": false
+                }
+            ]
+        },
+        {
+            "command_name": "sa-whoami",
+            "help": "Simulates whoami /all",
+            "depends_on": "coff-loader",
+            "entrypoint": "go",
+            "files": [
+                {
+                    "os": "windows",
+                    "arch": "amd64",
+                    "path": "whoami.x64.o"
+                },
+                {
+                    "os": "windows",
+                    "arch": "386",
+                    "path": "whoami.x86.o"
+                }
+            ],
+            "arguments": []
+        }
+    ]
+}

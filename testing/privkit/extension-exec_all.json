@@ -1,0 +1,61 @@
+{
+    "name": "privkit",
+    "package_name": "privkit",
+    "version": "0.0.0",
+    "extension_author": "c2biz",
+    "original_author": "mertdas",
+    "repo_url": "https://github.com/sliverarmory/privkit",
+    "commands": [
+        {
+            "command_name": "privkit",
+            "help": "Executes all BOFs in sequence to check for potential weaknesses.",
+            "depends_on": "coff-loader",
+            "entrypoint": "go",
+            "workflow": "sequential",
+            "bofs": [
+                {
+                    "name": "alwaysinstallelevated",
+                    "path": "alwaysinstallelevated.o",
+                    "os": "windows",
+                    "arch": "amd64"
+                },
+                {
+                    "name": "autologon",
+                    "path": "autologon.o",
+                    "os": "windows",
+                    "arch": "amd64"
+                },
+                {
+                    "name": "credentialmanager",
+                    "path": "credentialmanager.o",
+                    "os": "windows",
+                    "arch": "amd64"
+                },
+                {
+                    "name": "hijackablepath",
+                    "path": "hijackablepath.o",
+                    "os": "windows",
+                    "arch": "amd64"
+                },
+                {
+                    "name": "modifiableautorun",
+                    "path": "modifiableautorun.o",
+                    "os": "windows",
+                    "arch": "amd64"
+                },
+                {
+                    "name": "tokenprivileges",
+                    "path": "tokenprivileges.o",
+                    "os": "windows",
+                    "arch": "amd64"
+                },
+                {
+                    "name": "unquotedsvcpath",
+                    "path": "unquotedsvcpath.o",
+                    "os": "windows",
+                    "arch": "amd64"
+                }
+            ]
+        }
+    ]
+}

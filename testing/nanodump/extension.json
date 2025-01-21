@@ -1,0 +1,83 @@
+{
+    "name": "nanodump",
+    "package_name": "nanodump",
+    "version": "0.0.0",
+    "extension_author": "c2biz",
+    "original_author": "nanodump_author",
+    "repo_url": "https://github.com/sliverarmory/nanodump",
+    "commands": [
+        [
+            {
+                "command_name": "nanodump",
+                "help": "Performs a memory dump for incident response or debugging.",
+                "depends_on": "coff-loader",
+                "entrypoint": "go",
+                "files": [
+                    {
+                        "os": "windows",
+                        "arch": "amd64",
+                        "path": "nanodump.x64.o"
+                    },
+                    {
+                        "os": "windows",
+                        "arch": "x86",
+                        "path": "nanodump.x86.o"
+                    }
+                ],
+                "arguments": []
+            },
+            {
+                "command_name": "nanodump_ppl_dump",
+                "help": "Memory dump with process protection bypass.",
+                "depends_on": "coff-loader",
+                "entrypoint": "go",
+                "files": [
+                    {
+                        "os": "windows",
+                        "arch": "amd64",
+                        "path": "nanodump_ppl_dump.x64.o"
+                    },
+                    {
+                        "os": "windows",
+                        "arch": "x86",
+                        "path": "nanodump_ppl_dump.x86.o"
+                    }
+                ],
+                "arguments": []
+            },
+            {
+                "command_name": "nanodump_ppl_medic",
+                "help": "Medic mode for nanodump to bypass security restrictions.",
+                "depends_on": "coff-loader",
+                "entrypoint": "go",
+                "files": [
+                    {
+                        "os": "windows",
+                        "arch": "amd64",
+                        "path": "nanodump_ppl_medic.x64.o"
+                    }
+                ],
+                "arguments": []
+            },
+            {
+                "command_name": "nanodump_ssp",
+                "help": "Memory dump targeting Security Support Provider processes.",
+                "depends_on": "coff-loader",
+                "entrypoint": "go",
+                "files": [
+                    {
+                        "os": "windows",
+                        "arch": "amd64",
+                        "path": "nanodump_ssp.x64.o"
+                    },
+                    {
+                        "os": "windows",
+                        "arch": "x86",
+                        "path": "nanodump_ssp.x86.o"
+                    }
+                ],
+                "arguments": []
+            }
+        ]
+    ]
+}
