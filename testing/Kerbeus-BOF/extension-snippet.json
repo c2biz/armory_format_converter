@@ -1,0 +1,146 @@
+{
+    "commands": [
+        [
+            {
+                "command_name": "krb_asreproasting",
+                "help": "Perform AS-REP roasting.",
+                "depends_on": "coff-loader",
+                "entrypoint": "go",
+                "files": [
+                    {
+                        "os": "windows",
+                        "arch": "amd64",
+                        "path": "asreproasting.x64.o"
+                    },
+                    {
+                        "os": "windows",
+                        "arch": "x86",
+                        "path": "asreproasting.x86.o"
+                    }
+                ],
+                "arg_type": "flags",
+                "arguments": [
+                    {
+                        "name": "user",
+                        "type": "string",
+                        "description": "The username to target for AS-REP roasting.",
+                        "required": true,
+                        "alias": "/user"
+                    },
+                    {
+                        "name": "dc",
+                        "type": "string",
+                        "description": "The domain controller to target.",
+                        "required": false,
+                        "alias": "/dc"
+                    },
+                    {
+                        "name": "domain",
+                        "type": "string",
+                        "description": "The Kerberos domain name.",
+                        "required": false,
+                        "alias": "/domain"
+                    }
+                ]
+            },
+            {
+                "command_name": "krb_asktgt",
+                "help": "Retrieve a TGT.",
+                "depends_on": "coff-loader",
+                "entrypoint": "go",
+                "files": [
+                    {
+                        "os": "windows",
+                        "arch": "amd64",
+                        "path": "asktgt.x64.o"
+                    },
+                    {
+                        "os": "windows",
+                        "arch": "x86",
+                        "path": "asktgt.x86.o"
+                    }
+                ],
+                "arg_type": "flags",
+                "arguments": [
+                    {
+                        "name": "user",
+                        "type": "string",
+                        "description": "The username for which to retrieve a TGT.",
+                        "required": true,
+                        "alias": "/user"
+                    },
+                    {
+                        "name": "password",
+                        "type": "string",
+                        "description": "The password for the user.",
+                        "required": false,
+                        "alias": "/password"
+                    },
+                    {
+                        "name": "aes256",
+                        "type": "string",
+                        "description": "The AES-256 hash for the user.",
+                        "required": false,
+                        "alias": "/aes256"
+                    },
+                    {
+                        "name": "rc4",
+                        "type": "string",
+                        "description": "The RC4 hash for the user.",
+                        "required": false,
+                        "alias": "/rc4"
+                    },
+                    {
+                        "name": "domain",
+                        "type": "string",
+                        "description": "The Kerberos domain name.",
+                        "required": false,
+                        "alias": "/domain"
+                    },
+                    {
+                        "name": "dc",
+                        "type": "string",
+                        "description": "The domain controller to target.",
+                        "required": false,
+                        "alias": "/dc"
+                    },
+                    {
+                        "name": "enctype",
+                        "type": "string",
+                        "description": "The encryption type (rc4 or aes256).",
+                        "required": false,
+                        "alias": "/enctype"
+                    },
+                    {
+                        "name": "ptt",
+                        "type": "boolean",
+                        "description": "Pass-the-ticket: load the TGT directly into memory.",
+                        "required": false,
+                        "alias": "/ptt"
+                    },
+                    {
+                        "name": "nopac",
+                        "type": "boolean",
+                        "description": "Suppress the inclusion of a PAC in the ticket.",
+                        "required": false,
+                        "alias": "/nopac"
+                    },
+                    {
+                        "name": "nopreauth",
+                        "type": "boolean",
+                        "description": "Disable pre-authentication when requesting a TGT.",
+                        "required": false,
+                        "alias": "/nopreauth"
+                    },
+                    {
+                        "name": "opsec",
+                        "type": "boolean",
+                        "description": "Enable OPSEC mode for stealthier execution.",
+                        "required": false,
+                        "alias": "/opsec"
+                    }
+                ]
+            }
+        ]
+    ]
+}
